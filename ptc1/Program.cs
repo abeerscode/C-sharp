@@ -1,4 +1,4 @@
-﻿// Print "hello world"
+﻿// Print Anything
 
 using System;
 
