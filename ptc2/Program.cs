@@ -1,4 +1,4 @@
-﻿// Leap Year
+﻿// Leap Year Checker
 using System;
 
 public class Program
