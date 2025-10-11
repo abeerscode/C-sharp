@@ -1,17 +1,8 @@
-# Ignore everything
-*
-
-# But not these:
-!.gitignore
-!readme.md
-!*/                       # Keep all directories
-!*.cs                     # Keep C# source files
-!*.csproj                 # Keep project files
-!*.sln                    # Keep solution files (if any)
-
-# Ignore build outputs and caches
+# Ignore build outputs
 bin/
 obj/
+
+# Ignore user-specific files
 *.user
 *.suo
 *.userosscache
@@ -34,3 +25,10 @@ packages/
 # Ignore VS Code settings if personal
 .vscode/
 *.vs/
+
+# Keep source code, projects, solution, readme, and gitignore
+!*.cs
+!*.csproj
+!*.sln
+!readme.md
+!.gitignore
