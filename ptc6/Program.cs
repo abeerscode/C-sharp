@@ -1,4 +1,6 @@
 using System;
+using System.Data;
+using System.Globalization;
 
 class Program
 {
@@ -11,8 +13,9 @@ class Program
         Console.WriteLine("3. Check Grade inserting marks");
         Console.WriteLine("4. Factorial of a Number");
         Console.WriteLine("5. Fibonacci of a Number");
+        Console.WriteLine("6. Matrix");
 
-        Console.Write("\nEnter your choice (1-5): ");
+        Console.Write("\nEnter your choice (1-6): ");
         if (!int.TryParse(Console.ReadLine(), out int choice))
         {
             Console.WriteLine("Invalid input! Please enter a number.");
@@ -28,7 +31,7 @@ class Program
                     Console.WriteLine("Invalid input! Please enter a valid year.");
                     return;
                 }
-                
+
                 if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
                 {
                     Console.WriteLine($"{year} is a leap year.");
@@ -112,19 +115,19 @@ class Program
                     Console.WriteLine("Invalid input! Please enter a valid number.");
                     return;
                 }
-                
+
                 if (num < 0)
                 {
                     Console.WriteLine("Factorial is not defined for negative numbers.");
                     return;
                 }
-                
+
                 long factorial = 1;
                 for (int i = 2; i <= num; i++)
                 {
                     factorial *= i;
                 }
-                
+
                 Console.WriteLine($"Factorial of {num} is: {factorial}");
                 break;
 
@@ -137,16 +140,16 @@ class Program
                     Console.WriteLine("Invalid input! Please enter a valid number.");
                     return;
                 }
-                
+
                 if (terms < 1)
                 {
                     Console.WriteLine("Please enter a positive number.");
                     return;
                 }
-                
+
                 Console.WriteLine("Fibonacci Series:");
                 int first = 0, second = 1;
-                
+
                 for (int i = 1; i <= terms; i++)
                 {
                     Console.Write($"{first} ");
@@ -157,8 +160,55 @@ class Program
                 Console.WriteLine();
                 break;
 
+            case 6:
+                Console.WriteLine("Print a 2D Array");
+                Console.WriteLine("------------------------");
+
+                Console.WriteLine("Enter number of rows:");
+                if (!int.TryParse(Console.ReadLine(), out int row))
+                {
+                    Console.WriteLine("Invalid input! Please enter a valid number for rows.");
+                    return;
+                }
+
+                Console.WriteLine("Enter number of columns:");
+                if (!int.TryParse(Console.ReadLine(), out int col))
+                {
+                    Console.WriteLine("Invalid input! Please enter a valid number for columns.");
+                    return;
+                }
+
+                int[,] arr = new int[row, col];
+
+                // Input elements
+                for (int i = 0; i < row; i++)
+                {
+                    for (int j = 0; j < col; j++)
+                    {
+                        Console.Write($"Enter element at position ({i},{j}): ");
+                        if (!int.TryParse(Console.ReadLine(), out int element))
+                        {
+                            Console.WriteLine("Invalid input! Please enter a valid number.");
+                            return;
+                        }
+                        arr[i, j] = element;
+                    }
+                }
+
+                // Print the matrix
+                Console.WriteLine($"\nThe {row}x{col} Matrix is:\n");
+                for (int i = 0; i < row; i++)
+                {
+                    for (int j = 0; j < col; j++)
+                    {
+                        Console.Write(arr[i, j] + "\t");
+                    }
+                    Console.WriteLine();
+                }
+                break;
+
             default:
-                Console.WriteLine("Invalid choice! Please select a number between 1 and 5.");
+                Console.WriteLine("Invalid choice! Please select a number between 1 and 6.");
                 break;
         }
     }
