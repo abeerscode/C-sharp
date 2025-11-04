@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Properties
+
+using System;
 class Rectangle
 {
     private int length;

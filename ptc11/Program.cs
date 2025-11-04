@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Method or Function
+using System;
 
 class Employee
 {
