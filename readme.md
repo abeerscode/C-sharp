@@ -2,7 +2,7 @@
 
 #run command --> dotnet run
 
-#run command --> cd "/Users/ratul/Code/C sharp/ptc6" && dotnet run
+#run command --> cd "/Users/ratul/Code/c#/ptc6" && dotnet run
 
 #delete a folder --> git rm -r foldername
 
